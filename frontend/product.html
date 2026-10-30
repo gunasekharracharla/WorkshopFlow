@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="WorkshopFlow gives independent trainers and learning businesses a branded way to publish workshops, take verified payments, and manage registrations." />
+  <meta name="theme-color" content="#f6f7f2" />
+  <title>WorkshopFlow | Sell your next workshop</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="stylesheet" href="/portfolio.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-shell">
+      <a class="brand" href="#home" aria-label="WorkshopFlow home">
+        <span class="brand-mark" aria-hidden="true">WF</span>
+        <span class="brand-name">WorkshopFlow<span class="brand-dot">.</span></span>
+      </a>
+      <button class="menu-toggle" id="mobileMenuToggle" type="button" aria-expanded="false" aria-controls="mainNav">Menu</button>
+      <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+        <a href="#features">Platform</a>
+        <a href="#how-it-works">How it works</a>
+        <a href="#faq">FAQ</a>
+        <a class="nav-cta" href="/events/full-stack-web-development">View attendee page <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero section-wrap">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="status-dot"></span> WORKSHOP SALES, WITHOUT THE SPREADSHEET CHASE</p>
+          <h1>Turn your expertise into a <span>workshop people can book.</span></h1>
+          <p class="hero-description">WorkshopFlow gives trainers and learning businesses a branded registration page, secure payment verification, seat tracking, and practical admin tools in one focused setup.</p>
+          <div class="hero-actions">
+            <a class="button button-dark" href="/events/full-stack-web-development">View the attendee page <span aria-hidden="true">↘</span></a>
+            <a class="text-link" href="#features">Explore the platform <span aria-hidden="true">↓</span></a>
+          </div>
+          <div class="hero-live-facts" aria-label="Platform capabilities">
+            <div class="hero-fact"><span>BRAND</span><strong>Your identity</strong></div>
+            <div class="hero-fact"><span>PAYMENTS</span><strong>Server-verified</strong></div>
+            <div class="hero-fact"><span>OPERATIONS</span><strong>One dashboard</strong></div>
+          </div>
+        </div>
+        <div class="hero-art" aria-label="Illustration of the workshop registration workflow" role="img">
+          <div class="art-orbit orbit-one"></div>
+          <div class="art-orbit orbit-two"></div>
+          <div class="code-window">
+            <div class="window-top"><span></span><span></span><span></span><small>workshop-launch</small></div>
+            <div class="code-lines" aria-hidden="true">
+              <p><i>01</i><b class="code-purple">const</b> workshop = {</p>
+              <p><i>02</i>&nbsp;&nbsp;brand: <b class="code-green">"yours"</b>,</p>
+              <p><i>03</i>&nbsp;&nbsp;checkout: <b class="code-yellow">verified</b>,</p>
+              <p><i>04</i>&nbsp;&nbsp;seats: <b class="code-purple">tracked</b>,</p>
+              <p><i>05</i>&nbsp;&nbsp;followUp: <b class="code-green">"ready"</b></p>
+              <p><i>06</i>};</p>
+              <p><i>07</i><span class="code-cursor"></span></p>
+            </div>
+          </div>
+          <div class="art-caption"><span>YOUR WORKSHOP</span><span aria-hidden="true">→</span><span>READY TO SELL</span></div>
+          <span class="art-spark spark-one" aria-hidden="true">✳</span>
+          <span class="art-spark spark-two" aria-hidden="true">✳</span>
+        </div>
+      </div>
+      <div class="container intro-strip">
+        <span class="strip-label">ONE CONNECTED WORKFLOW</span>
+        <span>Brand</span><span class="strip-plus">+</span><span>Register</span><span class="strip-plus">+</span><span>Pay</span><span class="strip-plus">+</span><span>Manage</span>
+      </div>
+    </section>
+
+    <section class="section services-section" id="features">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">THE PLATFORM</p>
+          <h2>Everything around a paid workshop, in one place.</h2>
+          <p>A focused toolkit for organizations that sell live training—not a marketplace or a full learning management system.</p>
+        </div>
+        <div class="service-grid">
+          <article class="service-card">
+            <span class="service-number">01 / BRAND</span>
+            <div class="service-icon" aria-hidden="true">&lt;/&gt;</div>
+            <h3>Publish a branded page</h3>
+            <p>Present your workshop, instructor, schedule, price, and learning outcomes with your visual identity.</p>
+            <span class="card-link">White-label per deployment</span>
+          </article>
+          <article class="service-card service-card-featured">
+            <span class="service-number">02 / REGISTER &amp; PAY</span>
+            <div class="service-icon" aria-hidden="true">{ }</div>
+            <h3>Take registrations with confidence</h3>
+            <p>Collect attendee details and verify checkout with the payment provider before confirming a seat.</p>
+            <span class="card-link">Razorpay · INR checkout</span>
+          </article>
+          <article class="service-card">
+            <span class="service-number">03 / OPERATE</span>
+            <div class="service-icon" aria-hidden="true">↔</div>
+            <h3>Run the event from admin</h3>
+            <p>Track capacity and payment status, export participant data, and connect follow-up automations.</p>
+            <span class="card-link">Dashboard · CSV · Webhooks</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section build-section" id="how-it-works">
+      <div class="container build-layout">
+        <div class="section-heading build-heading">
+          <p class="eyebrow">HOW IT WORKS</p>
+          <h2>Go from workshop details to a working sales flow.</h2>
+          <p>WorkshopFlow is currently delivered as a configured, single-organization deployment. It is not yet a self-service multi-tenant SaaS.</p>
+          <a class="text-link" href="/events/full-stack-web-development">Preview the attendee experience <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="build-list">
+          <article class="build-item"><span class="build-index">01</span><div><h3>Configure your workshop</h3><p>Set title, date, delivery details, price, capacity, and registration state in the admin dashboard.</p></div><span class="build-arrow" aria-hidden="true">↗</span></article>
+          <article class="build-item"><span class="build-index">02</span><div><h3>Apply your brand</h3><p>Add your organization and instructor information so the public experience reflects your business.</p></div><span class="build-arrow" aria-hidden="true">↗</span></article>
+          <article class="build-item"><span class="build-index">03</span><div><h3>Connect payments and operations</h3><p>Configure Razorpay and optional webhook automation using server-side secrets.</p></div><span class="build-arrow" aria-hidden="true">↗</span></article>
+          <article class="build-item"><span class="build-index">04</span><div><h3>Publish and manage</h3><p>Share the registration page, monitor verified payments, export records, and review launch readiness.</p></div><span class="build-arrow" aria-hidden="true">↗</span></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq-section section" id="faq">
+      <div class="container">
+        <div class="section-heading"><p class="eyebrow">FAQ</p><h2>Know what you’re getting.</h2><p>A clear view of today’s product scope and the current delivery model.</p></div>
+        <div class="faq-list">
+          <details><summary>Is WorkshopFlow a self-service SaaS today?</summary><p>No. The current product is a single-organization deployment configured for one workshop at a time. Multi-tenant accounts, subscription billing, and self-service onboarding are future product work.</p></details>
+          <details><summary>Which payment provider and currency are supported?</summary><p>The current checkout uses Razorpay and is configured for INR. Payment credentials and signature verification are handled by the backend.</p></details>
+          <details><summary>Does WorkshopFlow send email reminders by itself?</summary><p>No. Payment events and reminder requests can be connected to an external automation service. The organizer must configure that service to schedule and deliver messages.</p></details>
+          <details><summary>Can I see the attendee experience?</summary><p>Yes. Open the attendee page to see the configured workshop landing page and registration flow. It may connect to a live payment account, so only complete checkout if you intend to register for that workshop.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="demo">
+      <div class="container contact-layout">
+        <div><p class="eyebrow">SEE THE PRODUCT</p><h2>Explore the workshop registration experience.</h2><p>View the attendee-facing page separately from this WorkshopFlow product overview. Checkout is connected to the active deployment.</p></div>
+        <a class="button button-light" href="/events/full-stack-web-development">Open attendee page <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-layout">
+      <a class="brand footer-brand" href="#home"><span class="brand-mark" aria-hidden="true">WF</span><span class="brand-name">WorkshopFlow<span class="brand-dot">.</span></span></a>
+      <p>Branded workshop registration and operations</p>
+      <a class="back-top" href="#home">Back to top ↑</a>
+      <small>WorkshopFlow is a working product name; verify availability before commercial use.</small>
+    </div>
+  </footer>
+  <script src="/product.js"></script>
+</body>
+</html>

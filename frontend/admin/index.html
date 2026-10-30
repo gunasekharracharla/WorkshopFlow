@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f5f6f2" />
+    <title>WorkshopFlow | Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="admin.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <a class="brand" href="/" aria-label="WorkshopFlow product overview">
+          <span class="brand-mark">WF</span>
+          <span>WorkshopFlow<span class="brand-period">.</span></span>
+        </a>
+        <p class="sidebar-label">WORKSPACE</p>
+        <nav class="side-nav" aria-label="Dashboard sections">
+          <a class="nav-link active" href="#overview"><span class="nav-icon">⌂</span>Overview</a>
+          <a class="nav-link" href="#registrations"><span class="nav-icon">▤</span>Registrations</a>
+          <a class="nav-link" href="#automation"><span class="nav-icon">↗</span>Automation</a>
+          <a class="nav-link" href="#workshop-settings"><span class="nav-icon">⚙</span>Workshop settings</a>
+          <a class="nav-link" href="#brand-settings"><span class="nav-icon">✳</span>Brand &amp; instructor</a>
+        </nav>
+        <div class="sidebar-bottom">
+          <div class="sidebar-note">
+            <span class="note-icon">✳</span>
+            <strong>Your workshop, in sync.</strong>
+            <p>Registrations, payments and follow-ups—connected in one place.</p>
+          </div>
+          <a class="public-link" href="/" target="_blank" rel="noopener">View public page <span>↗</span></a>
+        </div>
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar">
+          <div class="breadcrumbs"><span>Workspace</span><span class="crumb-divider">/</span><strong>Overview</strong></div>
+          <div class="topbar-actions">
+            <span class="connection-pill" id="apiStatus"><span class="connection-dot"></span>Not connected</span>
+            <button class="button button-outline" id="refreshButton" type="button" disabled><span aria-hidden="true">↻</span> Refresh</button>
+            <button class="button button-outline" id="disconnectButton" type="button" hidden>Disconnect</button>
+          </div>
+        </header>
+
+        <section class="page-section" id="overview">
+          <div class="page-heading">
+            <div>
+              <p class="eyebrow">YOUR WORKSHOP, AT A GLANCE</p>
+              <h1 id="dashboardTitle">Good to have you here.</h1>
+              <p class="page-subtitle">A live view of registrations, payments and your next workshop.</p>
+            </div>
+            <a class="button button-dark" href="#registrations">View registrations <span aria-hidden="true">↘</span></a>
+          </div>
+
+          <section class="connect-card" aria-labelledby="connectHeading">
+            <div class="connect-copy">
+              <span class="connect-icon" aria-hidden="true">⌁</span>
+              <div>
+                <h2 id="connectHeading">Connect to your workshop</h2>
+                <p id="connectHelp">Sign in to securely load live data from your workshop database.</p>
+              </div>
+            </div>
+            <form class="connect-form" id="adminLoginForm">
+              <label class="sr-only" for="username">Admin username</label>
+              <input id="username" placeholder="Admin username" autocomplete="username" required />
+              <div class="password-field">
+                <label class="sr-only" for="password">Admin password</label>
+                <input id="password" type="password" placeholder="Admin password" autocomplete="current-password" required />
+                <button class="password-toggle" id="passwordToggle" type="button" aria-label="Show password">Show</button>
+              </div>
+              <button class="button button-dark" id="loadButton" type="submit">Connect dashboard <span aria-hidden="true">→</span></button>
+            </form>
+          </section>
+          <div class="toolbar-meta">
+            <div id="message" class="admin-message" role="status" aria-live="polite">Enter your admin credentials to view live workshop data.</div>
+            <div id="lastUpdated" class="last-updated">Live data not loaded</div>
+          </div>
+
+          <div class="stats-grid" id="stats" aria-live="polite">
+            <article class="stat-card stat-highlight"><div class="stat-label"><span>Total registrations</span><span class="stat-icon">▤</span></div><strong>—</strong><small>All workshop sign-ups</small></article>
+            <article class="stat-card"><div class="stat-label"><span>Payments received</span><span class="stat-icon">✓</span></div><strong>—</strong><small>Verified by the payment provider</small></article>
+            <article class="stat-card"><div class="stat-label"><span>Pending payments</span><span class="stat-icon">◷</span></div><strong>—</strong><small>Awaiting payment confirmation</small></article>
+            <article class="stat-card"><div class="stat-label"><span>Verified revenue</span><span class="stat-icon">₹</span></div><strong>—</strong><small>Successful payments only</small></article>
+          </div>
+
+          <section class="overview-grid" aria-label="Workshop and data status">
+            <article class="content-card next-workshop-card">
+              <div class="card-heading">
+                <div><p class="eyebrow">UP NEXT</p><h2 id="overviewWorkshopName">Your workshop</h2></div>
+                <span class="status-badge status-neutral" id="workshopStatusBadge">Not loaded</span>
+              </div>
+              <div class="workshop-summary">
+                <div><span class="summary-icon">▦</span><span><small>DATE &amp; TIME</small><strong id="overviewWorkshopSchedule">Connect to load schedule</strong></span></div>
+                <div><span class="summary-icon">◉</span><span><small>SEAT AVAILABILITY</small><strong id="overviewWorkshopSeats">Connect to load capacity</strong></span></div>
+              </div>
+              <a class="subtle-link" href="#workshop-settings">Manage workshop details <span>→</span></a>
+            </article>
+            <article class="content-card data-card">
+              <div class="card-heading"><div><p class="eyebrow">LIVE CONNECTIONS</p><h2>Product status</h2></div><span class="live-indicator" id="dataStatus">Waiting</span></div>
+              <div class="connection-row"><span><i class="connection-dot"></i>Workshop API</span><strong id="apiDetail">Not connected</strong></div>
+              <div class="connection-row"><span><i class="connection-dot"></i>Workshop database</span><strong id="databaseDetail">Not connected</strong></div>
+              <div class="connection-row"><span><i class="connection-dot"></i>Automation webhook</span><strong id="webhookDetail">Not checked</strong></div>
+              <p class="card-footnote">Connection state reflects the last successful dashboard sync.</p>
+            </article>
+          </section>
+          <article class="launch-card content-card">
+            <div class="card-heading">
+              <div><p class="eyebrow">CLIENT HANDOFF</p><h2>Production launch checklist</h2></div>
+              <span class="status-badge status-neutral" id="readinessBadge">Connect to check</span>
+            </div>
+            <p class="section-description">A private, secrets-free pre-launch check. In production, attendee registration stays unavailable until every required item is ready. Backup, monitoring, payment-operations, and edge-rate-limit checks depend on owner-confirmed setup.</p>
+            <p class="section-description" id="readinessSummary" aria-live="polite">Connect the dashboard to review required launch items and warnings.</p>
+            <ul class="readiness-list" id="readinessChecks"><li class="readiness-empty">Connect the dashboard to check production setup.</li></ul>
+          </article>
+        </section>
+
+        <section class="page-section" id="registrations">
+          <div class="section-title-row">
+            <div><p class="eyebrow">YOUR ATTENDEES</p><h2>Registrations</h2><p class="section-description">Search, filter and export registration records stored in your database.</p></div>
+            <button class="button button-outline" id="exportButton" type="button" disabled>↓ <span>Export CSV</span></button>
+          </div>
+          <div class="table-toolbar">
+            <label class="search-field"><span aria-hidden="true">⌕</span><input id="search" placeholder="Search name or email" autocomplete="off" /></label>
+            <label class="filter-field"><span class="sr-only">Payment status</span><select id="statusFilter"><option value="">All payment statuses</option><option>PENDING</option><option>SUCCESS</option><option>FAILED</option></select></label>
+            <label class="filter-field"><span class="sr-only">Attendee role</span><select id="roleFilter"><option value="">All roles</option></select></label>
+            <button class="text-button" id="clearFiltersButton" type="button">Clear filters</button>
+          </div>
+          <div class="table-card">
+            <div class="table-scroll">
+              <table class="data-table">
+                <thead><tr><th>Attendee</th><th>Role</th><th>Payment</th><th>Amount</th><th>Registered</th><th>Follow-up actions</th></tr></thead>
+                <tbody id="participants"><tr class="empty-row"><td colspan="6">Connect to load registration records.</td></tr></tbody>
+              </table>
+            </div>
+            <div class="table-footer"><span id="registrationCount">No records loaded</span><span>Payment status is verified by the server</span></div>
+          </div>
+        </section>
+
+        <section class="page-section" id="automation">
+          <div class="section-title-row">
+            <div><p class="eyebrow">LESS MANUAL FOLLOW-UP</p><h2>Automation &amp; email drafts</h2><p class="section-description">Trigger workflows for paid attendees and track webhook delivery from your outbox.</p></div>
+            <button class="button button-outline" id="refreshAutomationButton" type="button" disabled><span aria-hidden="true">↻</span> Refresh activity</button>
+          </div>
+          <article class="automation-summary content-card">
+            <div class="automation-summary-copy"><span class="automation-symbol">↗</span><div><h3>Webhook delivery</h3><p class="automation-help" id="automationStatus">Connect to check your automation webhook.</p></div></div>
+            <div class="automation-counts"><div><strong id="automationSentCount">—</strong><span>Sent</span></div><div><strong id="automationPendingCount">—</strong><span>Pending</span></div><div><strong id="automationFailedCount">—</strong><span>Failed</span></div></div>
+          </article>
+          <div class="table-card">
+            <div class="table-heading"><div><h3>Delivery activity</h3><p>Recent workflow and reminder events</p></div><span class="table-note">Latest 100 events</span></div>
+            <div class="table-scroll">
+              <table class="data-table event-table">
+                <thead><tr><th>Event</th><th>Attendee</th><th>Status</th><th>Attempts</th><th>Last error</th><th>Last sent</th><th>Action</th></tr></thead>
+                <tbody id="automationEvents"><tr class="empty-row"><td colspan="7">Connect to load delivery activity.</td></tr></tbody>
+              </table>
+            </div>
+          </div>
+          <p class="integration-note"><strong>External services:</strong> The configured webhook receives events. Your automation provider must schedule 24-hour reminders and send emails. Email drafts created here are not sent automatically.</p>
+        </section>
+
+        <section class="page-section" id="workshop-settings">
+          <div class="section-title-row">
+            <div><p class="eyebrow">MAKE IT YOURS</p><h2>Workshop settings</h2><p class="section-description">Changes update the public workshop page and new payment orders. Existing payment attempts keep their original price.</p></div>
+            <span class="settings-lock" id="settingsLock">Connect to edit</span>
+          </div>
+          <form class="settings-card" id="workshopSettingsForm">
+            <div class="settings-section-heading"><span class="settings-icon">01</span><div><h3>Public workshop details</h3><p>Information attendees see before registration.</p></div></div>
+            <div class="form-grid">
+              <div class="field-group field-span-2"><label for="workshopName">Workshop name</label><input id="workshopName" placeholder="Example: WorkshopFlow Launch Workshop" required /></div>
+              <div class="field-group"><label for="workshopSlug">Registration URL slug</label><input id="workshopSlug" placeholder="full-stack-web-development" required /></div>
+              <div class="field-group"><label for="workshopMode">Session format</label><input id="workshopMode" placeholder="Online live workshop" required /></div>
+              <div class="field-group field-span-2"><label for="workshopDescription">Public description</label><textarea id="workshopDescription" rows="3" placeholder="Describe what attendees will learn"></textarea></div>
+              <div class="field-group field-span-2"><label for="learningPoints">What attendees will learn <span>One point per line</span></label><textarea id="learningPoints" rows="4" placeholder="Plan a useful feature&#10;Connect the frontend to an API"></textarea></div>
+            </div>
+
+            <div class="settings-section-heading settings-divider"><span class="settings-icon">02</span><div><h3>Schedule, price &amp; availability</h3><p>Control when registration is open and what new attendees pay.</p></div></div>
+            <div class="form-grid">
+              <div class="field-group"><label for="workshopDate">Workshop date</label><input id="workshopDate" type="date" required /></div>
+              <div class="field-group"><label for="startTime">Start time</label><input id="startTime" type="time" required /></div>
+              <div class="field-group"><label for="endTime">End time</label><input id="endTime" type="time" required /></div>
+              <div class="field-group"><label for="workshopTimezone">Timezone</label><input id="workshopTimezone" placeholder="Asia/Kolkata" required /></div>
+              <div class="field-group"><label for="workshopPriceRupees">Price (INR)</label><div class="input-prefix"><span>₹</span><input id="workshopPriceRupees" type="number" min="1" step="1" placeholder="499" required /></div></div>
+              <div class="field-group"><label for="maxSeats">Maximum seats</label><input id="maxSeats" type="number" min="1" step="1" placeholder="100" required /></div>
+              <div class="field-group"><label for="registrationStatus">Registration status</label><select id="registrationStatus"><option>DRAFT</option><option>PUBLISHED</option><option>REGISTRATION_OPEN</option><option>REGISTRATION_CLOSED</option><option>COMPLETED</option><option>CANCELLED</option></select></div>
+            </div>
+
+            <div class="settings-section-heading settings-divider"><span class="settings-icon">03</span><div><h3>Private attendee access</h3><p>Meeting details are kept private and are not shown on the public page.</p></div></div>
+            <div class="form-grid">
+              <div class="field-group"><label for="meetingPlatform">Meeting platform</label><input id="meetingPlatform" placeholder="Example: Microsoft Teams" /></div>
+              <div class="field-group"><label for="meetingId">Meeting ID</label><input id="meetingId" placeholder="Meeting ID or room name" /></div>
+              <div class="field-group field-span-2"><label for="meetingUrl">Private meeting URL <span>HTTPS link</span></label><input id="meetingUrl" type="url" placeholder="https://..." /></div>
+            </div>
+            <div class="settings-footer"><span id="workshopMessage" class="admin-message" role="status" aria-live="polite"></span><button class="button button-dark" id="saveWorkshopButton" type="submit" disabled>Save workshop settings <span aria-hidden="true">→</span></button></div>
+          </form>
+        </section>
+
+        <section class="page-section" id="brand-settings">
+          <div class="section-title-row">
+            <div><p class="eyebrow">WHITE-LABEL YOUR CLIENT SITE</p><h2>Brand &amp; instructor profile</h2><p class="section-description">These details are stored in the workshop database and appear on the public landing page and registration form.</p></div>
+            <span class="settings-lock" id="brandingLock">Connect to edit</span>
+          </div>
+          <form class="settings-card" id="brandingSettingsForm">
+            <div class="settings-section-heading"><span class="settings-icon">01</span><div><h3>Public brand</h3><p>Customize the name, small mark, and accent color for the client deployment.</p></div></div>
+            <div class="form-grid">
+              <div class="field-group"><label for="brandName">Brand name</label><input id="brandName" maxlength="80" placeholder="Example: Build the Web" required /></div>
+              <div class="field-group"><label for="brandMark">Brand mark <span>Up to 5 characters</span></label><input id="brandMark" maxlength="5" placeholder="WF" required /></div>
+              <div class="field-group"><label for="brandAccentColor">Accent color</label><div class="color-input"><input id="brandAccentColor" type="color" value="#6b5bdd" /><span id="brandColorValue">#6b5bdd</span></div></div>
+            </div>
+            <div class="settings-section-heading settings-divider"><span class="settings-icon">02</span><div><h3>Instructor profile</h3><p>Use verified details supplied by the workshop organizer.</p></div></div>
+            <div class="form-grid">
+              <div class="field-group"><label for="instructorName">Instructor name</label><input id="instructorName" maxlength="120" placeholder="Full name" required /></div>
+              <div class="field-group"><label for="instructorTitle">Professional title</label><input id="instructorTitle" maxlength="120" placeholder="Example: Full-Stack Developer" required /></div>
+              <div class="field-group field-span-2"><label for="instructorBio">Instructor biography</label><textarea id="instructorBio" rows="4" maxlength="1200" placeholder="A short, factual introduction" required></textarea></div>
+              <div class="field-group"><label for="instructorEmail">Contact email</label><input id="instructorEmail" type="email" placeholder="host@example.com" required /></div>
+              <div class="field-group"><label for="registrationRoles">Attendee role choices <span>One per line</span></label><textarea id="registrationRoles" rows="4" placeholder="Developer&#10;Designer&#10;Student" required></textarea></div>
+            </div>
+            <div class="settings-footer"><span id="brandingMessage" class="admin-message" role="status" aria-live="polite"></span><button class="button button-dark" id="saveBrandingButton" type="submit" disabled>Save brand &amp; instructor <span aria-hidden="true">→</span></button></div>
+          </form>
+        </section>
+
+        <footer class="app-footer"><span>Workshop workspace</span><span>Live data · Server-verified payments · Connected automations</span></footer>
+      </main>
+    </div>
+
+    <dialog class="email-draft-dialog" id="emailDraftDialog" aria-labelledby="emailDraftHeading">
+      <div class="dialog-top"><div><p class="eyebrow">ATTENDEE FOLLOW-UP</p><h2 id="emailDraftHeading">Draft an email</h2></div><button class="dialog-close" id="closeEmailDraftButton" type="button" aria-label="Close dialog">×</button></div>
+      <p class="automation-help" id="emailDraftTo"></p>
+      <div class="field-group"><label for="emailTemplate">Email template</label><select id="emailTemplate"><option value="workshop_reminder">Workshop reminder</option><option value="registration_confirmation">Registration confirmation</option><option value="payment_receipt">Payment receipt</option></select></div>
+      <div class="field-group"><label for="emailSubject">Subject</label><input id="emailSubject" readonly /></div>
+      <div class="field-group"><label for="emailBody">Draft body</label><textarea id="emailBody" readonly rows="9"></textarea></div>
+      <p class="integration-note">This is a draft only. Review and copy it, or connect an email provider in your automation workflow to send messages.</p>
+      <div class="dialog-actions"><button class="button button-outline" id="closeEmailDraftFooter" type="button">Close</button><button class="button button-dark" id="copyEmailDraftButton" type="button">Copy email draft</button></div>
+    </dialog>
+
+    <script src="admin.js?v=20261030-dashboard-1"></script>
+  </body>
+</html>

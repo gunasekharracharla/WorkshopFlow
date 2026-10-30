@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Explore workshop details, learning outcomes, schedule, and registration in one place." />
+  <meta name="theme-color" content="#f6f7f2" />
+  <title>Workshop registration</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="stylesheet" href="/portfolio.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-shell">
+      <a class="brand" href="#home" aria-label="WorkshopFlow home">
+        <span class="brand-mark" data-brand-mark aria-hidden="true">WF</span>
+        <span class="brand-name"><span data-brand-name>WorkshopFlow</span><span class="brand-dot">.</span></span>
+      </a>
+      <button class="menu-toggle" id="mobileMenuToggle" type="button" aria-expanded="false" aria-controls="mainNav">Menu</button>
+      <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+        <a href="#learn">Workshop experience</a>
+        <a href="#instructor">Instructor</a>
+        <a href="#faq">FAQ</a>
+        <a class="nav-contact" href="#contact">Contact</a>
+        <a class="nav-cta" href="#register">Register <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero section-wrap">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="status-dot"></span> PRACTICAL, INSTRUCTOR-LED WORKSHOP</p>
+          <h1>Learn something useful. <span>Put it into practice.</span></h1>
+          <p class="hero-description" id="workshopHeroDescription">Explore the workshop details, learning outcomes, schedule, and registration information below.</p>
+          <div class="hero-actions">
+            <a class="button button-dark" href="#register">Reserve your seat <span aria-hidden="true">↘</span></a>
+            <a class="text-link" href="#learn">See the workshop experience <span aria-hidden="true">↓</span></a>
+          </div>
+          <div class="hero-live-facts" aria-label="Live workshop information">
+            <div class="hero-fact"><span>WHEN</span><strong id="heroDateValue">Loading schedule...</strong></div>
+            <div class="hero-fact"><span>SPOTS LEFT</span><strong id="heroSeatsValue">Checking availability...</strong></div>
+            <div class="hero-fact"><span>PRICE</span><strong id="heroFeeValue">Loading...</strong></div>
+          </div>
+        </div>
+        <div class="hero-art" aria-label="Illustration of the parts of a full-stack web application" role="img">
+          <div class="art-orbit orbit-one"></div>
+          <div class="art-orbit orbit-two"></div>
+          <div class="code-window">
+            <div class="window-top"><span></span><span></span><span></span><small>your-first-fullstack-app</small></div>
+            <div class="code-lines" aria-hidden="true">
+              <p><i>01</i><b class="code-purple">const</b> app = <b class="code-green">createApp</b>();</p>
+              <p><i>02</i></p>
+              <p><i>03</i>app.<b class="code-yellow">get</b>(<b class="code-green">"/api/projects"</b>,</p>
+              <p><i>04</i>&nbsp;&nbsp;<b class="code-purple">async</b> (request) =&gt; {</p>
+              <p><i>05</i>&nbsp;&nbsp;&nbsp;&nbsp;<b class="code-purple">return</b> database.<b class="code-yellow">list</b>();</p>
+              <p><i>06</i>&nbsp;&nbsp;});</p>
+              <p><i>07</i><span class="code-cursor"></span></p>
+            </div>
+          </div>
+          <div class="art-caption"><span>INTERFACE</span><span aria-hidden="true">→</span><span>WORKING APP</span></div>
+          <span class="art-spark spark-one" aria-hidden="true">✳</span>
+          <span class="art-spark spark-two" aria-hidden="true">✳</span>
+        </div>
+      </div>
+      <div class="container intro-strip">
+        <span class="strip-label">A CLEAR PATH FROM START TO FINISH</span>
+        <span>Learn</span><span class="strip-plus">+</span><span>Practice</span><span class="strip-plus">+</span><span>Ask</span><span class="strip-plus">+</span><span>Apply</span>
+      </div>
+    </section>
+
+    <section class="section services-section" id="learn">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">YOUR WORKSHOP EXPERIENCE</p>
+          <h2>Practical, focused, and designed for real takeaways.</h2>
+          <p>Get a clear view of the session, the instructor, and what you can expect before you register.</p>
+        </div>
+        <div class="service-grid">
+          <article class="service-card">
+            <span class="service-number">01 / LEARN</span>
+            <div class="service-icon" aria-hidden="true">&lt;/&gt;</div>
+            <h3>Understand the essentials</h3>
+            <p>Follow a structured introduction to the workshop topic and its core concepts.</p>
+            <span class="card-link">Clear learning outcomes</span>
+          </article>
+          <article class="service-card service-card-featured">
+            <span class="service-number">02 / PRACTICE</span>
+            <div class="service-icon" aria-hidden="true">{ }</div>
+            <h3>Connect ideas to practice</h3>
+            <p>Explore examples and activities that help turn new information into something useful.</p>
+            <span class="card-link">Hands-on learning</span>
+          </article>
+          <article class="service-card">
+            <span class="service-number">03 / APPLY</span>
+            <div class="service-icon" aria-hidden="true">↔</div>
+            <h3>Leave with next steps</h3>
+            <p>Build a stronger understanding of how to apply the session to your work or personal projects.</p>
+            <span class="card-link">Useful takeaways</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section build-section" id="workshop-details">
+      <div class="container build-layout">
+        <div class="section-heading build-heading">
+          <p class="eyebrow">THE WORKSHOP</p>
+          <h2>Know what you’ll cover before you join.</h2>
+          <p id="workshopDescription">Review the session description and learning points to decide whether this workshop is right for you.</p>
+          <a class="text-link" href="#register">Check the schedule and fee <span aria-hidden="true">↘</span></a>
+        </div>
+        <div class="build-list" id="learningPoints">
+          <article class="build-item"><span class="build-index">01</span><div><h3>Start with the fundamentals</h3><p>Understand the key ideas and vocabulary behind the workshop topic.</p></div><span class="build-arrow" aria-hidden="true">↗</span></article>
+          <article class="build-item"><span class="build-index">02</span><div><h3>Explore real examples</h3><p>See how the concepts work in practical situations and guided activities.</p></div><span class="build-arrow" aria-hidden="true">↗</span></article>
+          <article class="build-item"><span class="build-index">03</span><div><h3>Ask questions and get guidance</h3><p>Use the session to clarify ideas and connect them to your goals.</p></div><span class="build-arrow" aria-hidden="true">↗</span></article>
+          <article class="build-item"><span class="build-index">04</span><div><h3>Plan what to do next</h3><p>Leave with practical next steps for applying what you learned.</p></div><span class="build-arrow" aria-hidden="true">↗</span></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section" id="instructor">
+      <div class="container about-grid">
+        <div class="about-stamp" aria-hidden="true"><span>PLAN</span><b>✳</b><span>BUILD</span><b>✳</b><span>SHIP</span></div>
+        <div class="about-copy">
+          <p class="eyebrow">MEET YOUR INSTRUCTOR</p>
+          <h2><span data-instructor-name>Your workshop instructor</span> <span class="instructor-role">· <span data-instructor-title>Workshop facilitator</span></span></h2>
+          <p data-instructor-bio>I help professionals turn expert knowledge into actionable, hands-on learning experiences that are clear, practical, and easy to apply in real work.</p>
+          <p>This workshop is designed to give participants a structured learning path, practical takeaways, and a strong foundation they can use immediately after the session.</p>
+          <div class="approach-list"><span><b>01</b> Learn by doing</span><span><b>02</b> Keep it practical</span><span><b>03</b> Leave with clarity</span></div>
+          <a class="text-link instructor-contact" data-instructor-email href="#" hidden>Contact the instructor <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section register-section" id="register">
+      <div class="container register-layout">
+        <div class="register-copy">
+          <p class="eyebrow">JOIN THE WORKSHOP</p>
+          <h2>Join the next session.</h2>
+          <p>Review the schedule, format, and fee, then submit your details to begin registration.</p>
+          <div class="workshop-facts">
+            <div><span>DATE</span><strong id="workshopDateValue">Loading...</strong></div>
+            <div><span>TIME</span><strong data-workshop-time>Loading...</strong></div>
+            <div><span>FORMAT</span><strong id="workshopMode">Online workshop</strong></div>
+            <div><span>FEE</span><strong id="workshopFeeValue">Loading...</strong></div>
+          </div>
+          <p class="register-note">Your registration is confirmed only after the payment provider verifies your payment.</p>
+        </div>
+
+        <aside class="registration-card" aria-label="Workshop registration">
+          <div class="form-card" id="formCard">
+            <div class="card-header">
+              <p class="section-kicker small">REGISTRATION</p>
+              <h2>Save your spot</h2>
+              <p>Enter your details to continue to secure checkout.</p>
+            </div>
+            <form id="registrationForm" novalidate>
+              <input type="hidden" name="workshop" value="" />
+              <div class="field-row"><label for="name">Full name <b>*</b></label><input id="name" name="name" type="text" placeholder="Your name" autocomplete="name" required /><p class="field-error" id="nameError" role="alert" hidden></p></div>
+              <div class="field-row"><label for="email">Email address <b>*</b></label><input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required /><p class="field-error" id="emailError" role="alert" hidden></p></div>
+              <div class="field-row"><label for="countryButton">Country <b>*</b></label><div class="country-picker" id="countryPicker"><input id="country" name="country" type="hidden" value="IN" /><button id="countryButton" class="country-button" type="button" aria-haspopup="listbox" aria-expanded="false" aria-controls="countryPanel"><span class="country-button-label" id="countryButtonLabel">India (+91)</span><span class="country-caret" aria-hidden="true">▾</span></button><div class="country-panel" id="countryPanel" hidden><input id="countrySearch" class="country-search" type="search" placeholder="Search country or calling code" autocomplete="off" autocapitalize="off" spellcheck="false" role="combobox" aria-expanded="true" aria-controls="countryList" aria-label="Search countries" /><ul class="country-list" id="countryList" role="listbox" aria-label="Countries"></ul><p class="country-empty" id="countryEmpty" hidden>No matching country found.</p></div></div><p class="field-error" id="countryError" role="alert" hidden></p></div>
+              <div class="field-row"><label for="whatsapp">WhatsApp number <b>*</b></label><div class="phone-input" id="phoneInputWrap"><span id="phoneCode">+91</span><input id="whatsapp" name="whatsapp" type="tel" inputmode="tel" autocomplete="tel-national" placeholder="8123456789" maxlength="20" aria-describedby="whatsappError" required /></div><p class="field-error" id="whatsappError" role="alert" hidden></p></div>
+              <div class="form-columns">
+                <div class="field-row"><label for="role">Current role <b>*</b></label><select id="role" name="role" required><option value="">Select your role</option><option>Full-Stack Developer</option><option>Frontend Developer</option><option>Backend Developer</option><option>Web Designer</option><option>Student/Fresher</option><option>Other</option></select><p class="field-error" id="roleError" role="alert" hidden></p></div>
+                <div class="field-row"><label for="experience">Experience</label><select id="experience" name="experience"><option value="">Choose (optional)</option><option value="0">0 years</option><option value="1">1 year</option><option value="2">2 years</option><option value="3">3 years</option><option value="4">4 years</option><option value="5">5 years</option><option value="6">6 years</option><option value="7">7 years</option><option value="8">8 years</option><option value="9">9 years</option><option value="10">10+ years</option></select><p class="field-error" id="experienceError" role="alert" hidden></p></div>
+              </div>
+              <div class="readonly-field"><span>Workshop</span><strong id="workshopReadout" data-workshop-name>Loading...</strong></div>
+              <div class="fee-box"><span class="fee-label">Workshop fee</span><strong id="workshopFeeBadge">Loading...</strong><small>Amount shown before checkout</small></div>
+              <label class="checkbox-row consent-row" for="terms"><input id="terms" type="checkbox" required aria-describedby="termsError" /><span>I confirm that my information is correct and agree to the workshop registration terms.</span></label>
+              <div class="policy-links"><a data-privacy-url hidden target="_blank" rel="noopener noreferrer">Privacy notice</a><a data-registration-terms-url hidden target="_blank" rel="noopener noreferrer">Registration terms</a></div>
+              <p class="policy-notice" id="policyNotice" role="status" hidden>Privacy and registration policy links are not configured. Do not submit personal information until the organizer provides them.</p>
+              <p class="field-error consent-error" id="termsError" role="alert" hidden></p>
+              <button id="payButton" class="primary-button pay-button" type="submit" disabled>Loading workshop fee...</button>
+              <div class="secure-line"><span>Secure checkout powered by Razorpay</span><small>Payment is verified by the server before a seat is confirmed.</small></div>
+              <div id="status" class="status" aria-live="polite"></div>
+            </form>
+          </div>
+          <div id="successState" class="state-panel hidden" aria-live="polite"><div class="state-badge success">Payment verified</div><h3>Your seat is confirmed.</h3><p>Thank you, <strong id="successParticipantName">participant</strong>. Your registration for <strong data-workshop-name>the workshop</strong> is confirmed.</p><div class="state-grid"><div><span>Workshop</span><strong data-workshop-name>Workshop</strong></div><div><span>Date</span><strong id="successDate">Loading...</strong></div><div><span>Time</span><strong data-workshop-time>Loading...</strong></div><div><span>Amount paid</span><strong id="successFee">Loading...</strong></div><div><span>Payment status</span><strong id="successPaymentStatus">Verified</strong></div><div class="wide"><span>Registration ID</span><strong id="successParticipantId">--</strong></div></div><p class="state-note">This site does not send confirmation emails. Save your registration ID and contact the organizer through their published support channel for joining instructions.</p></div>
+          <div id="failureState" class="state-panel hidden" aria-live="polite"><div class="state-badge denied">Payment not completed</div><h3>Payment was not completed.</h3><p>Your registration has not been confirmed yet.</p><button id="retryPaymentBtn" class="primary-button" type="button">Try payment again</button></div>
+          <div id="cancelState" class="state-panel hidden" aria-live="polite"><div class="state-badge neutral">Payment cancelled</div><h3>Payment cancelled.</h3><p>You can continue when you're ready.</p><button id="returnToPaymentBtn" class="primary-button" type="button">Return to payment</button></div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="faq-section section" id="faq">
+      <div class="container">
+        <div class="section-heading"><p class="eyebrow">FAQ</p><h2>Before you get started.</h2><p>Have another question? Reach out and we can help.</p></div>
+        <div class="faq-list">
+          <details><summary>Who is this workshop for?</summary><p>It is designed for trainers, coaches, educators, and learning teams who want a premium, easy-to-run registration and sales process for live workshops.</p></details>
+          <details><summary>Do I need prior experience?</summary><p>No. The flow is built to be simple for attendees and easy for organizers to manage, with clear instructions and a polished purchase journey.</p></details>
+          <details><summary>How do I register?</summary><p>Complete the form, continue to secure checkout, and finish payment. The seat is confirmed only after payment verification succeeds.</p></details>
+          <details><summary>Where do I find the date and fee?</summary><p>The current date, time, and fee are loaded from the workshop configuration and shown in the registration section.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div class="container contact-layout">
+        <div><p class="eyebrow">QUESTIONS ABOUT THE WORKSHOP?</p><h2>Let's talk about your next workshop launch.</h2><p>Reach out to the instructor before registering, or share what you want to sell and how you want to run it.</p></div>
+        <a class="button button-light" data-instructor-email href="#" hidden>Contact the instructor <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-layout">
+      <a class="brand footer-brand" href="#home"><span class="brand-mark" data-brand-mark aria-hidden="true">WF</span><span class="brand-name"><span data-brand-name>WorkshopFlow</span><span class="brand-dot">.</span></span></a>
+    <p>Workshop registration</p>
+      <a class="back-top" href="#home">Back to top ↑</a>
+      <small>© <span id="year">2026</span> <span data-instructor-name>Your workshop instructor</span>. Workshop details are subject to change.</small>
+    </div>
+  </footer>
+  <span class="sr-only" id="heroWorkshopDate">Loading...</span>
+  <span class="sr-only" id="detailsWorkshopDate">Loading...</span>
+  <span class="sr-only" id="detailsWorkshopFee">Loading...</span>
+  <span class="sr-only" id="valueBandFee">Loading...</span>
+  <span class="sr-only" id="valueBandButtonFee">Loading...</span>
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <script src="/countries.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+# Environment variables (contains secrets)
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Database
+workshop.db
+*.db-journal
+*.db
+
+# Editor/OS
+.vscode/
+.idea/
+.DS_Store

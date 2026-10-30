@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MNRATHI payment test helper</title>
+</head>
+<body>
+  <h1>Local payment test helper</h1>
+  <p>Use the backend response from <code>POST /payment/create</code>. Do not place Razorpay credentials or fixed order IDs in this file.</p>
+  <button id="pay-button" type="button">Open Razorpay Checkout</button>
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <script>
+    const order = window.TEST_PAYMENT_ORDER;
+    document.getElementById("pay-button").addEventListener("click", () => {
+      if (!order) {
+        alert("Set window.TEST_PAYMENT_ORDER from a fresh /payment/create response first.");
+        return;
+      }
+      const checkout = new Razorpay({
+        key: order.key_id,
+        amount: Number(order.amount) * 100,
+        currency: order.currency,
+        name: "MNRATHI",
+        description: "MNRATHI AI Power Hour",
+        order_id: order.razorpay_order_id,
+        handler: (response) => console.log("Payment response received", response.razorpay_payment_id),
+        theme: { color: "#ff7418" }
+      });
+      checkout.open();
+    });
+  </script>
+</body>
+</html>

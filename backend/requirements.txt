@@ -1,0 +1,15 @@
+fastapi==0.115.0
+uvicorn[standard]==0.30.6
+sqlalchemy==2.0.35
+psycopg[binary]==3.3.6
+pydantic[email]==2.9.2
+pydantic-settings==2.6.1
+python-dotenv==1.0.1
+email-validator==2.3.0
+phonenumbers==9.0.39
+razorpay==1.4.2
+httpx==0.28.1
+requests==2.32.3
+pytest==8.3.3
+alembic==1.16.4
+setuptools<81  # razorpay 1.4.2 imports pkg_resources; missing on fresh Python 3.12+ venvs

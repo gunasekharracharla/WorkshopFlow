@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Create a workshop draft and get a shareable landing-page preview." />
+  <title>Become an Instructor | Workshop Builder</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/portfolio.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-shell">
+      <a class="brand" href="/" aria-label="Workshop builder home"><span class="brand-mark">WB</span><span class="brand-name">WORKSHOP BUILDER<span class="brand-dot">.</span></span></a>
+      <a class="text-link" href="/">Back to workshop <span aria-hidden="true">↗</span></a>
+    </div>
+  </header>
+  <main class="signup-page">
+    <div class="container signup-layout">
+      <section class="signup-intro">
+        <p class="eyebrow">INSTRUCTOR ONBOARDING</p>
+        <h1>Bring your next workshop <span>to life.</span></h1>
+        <p>Share your instructor profile and workshop idea. The app saves your application and creates a private, shareable landing-page preview automatically.</p>
+        <div class="signup-steps"><p><b>01</b> Add your details</p><p><b>02</b> Preview the generated page</p><p><b>03</b> Request review before publishing</p></div>
+        <p class="draft-disclaimer">Your application is a draft. It does not publish an event, collect attendee registrations, or enable payments. An administrator must review and configure the workshop.</p>
+      </section>
+      <section class="signup-card">
+        <h2>Tell us about your workshop</h2>
+        <p class="signup-help">Required fields are marked with an asterisk.</p>
+        <form id="instructorForm">
+          <label for="instructorName">Your name *</label>
+          <input id="instructorName" name="instructor_name" maxlength="100" autocomplete="name" required />
+          <label for="instructorTitle">Your role or expertise *</label>
+          <input id="instructorTitle" name="instructor_title" maxlength="120" placeholder="e.g. Full-Stack Developer" required />
+          <label for="email">Email address *</label>
+          <input id="email" name="email" type="email" maxlength="320" autocomplete="email" required />
+          <label for="organization">Organization <span>(optional)</span></label>
+          <input id="organization" name="organization" maxlength="120" autocomplete="organization" />
+          <label for="workshopName">Workshop title *</label>
+          <input id="workshopName" name="workshop_name" maxlength="160" placeholder="e.g. Build Your First Web App" required />
+          <label for="description">What will attendees learn? *</label>
+          <textarea id="description" name="description" maxlength="3000" rows="4" required></textarea>
+          <label for="learningPoints">Learning points * <span>(one per line, 1–8)</span></label>
+          <textarea id="learningPoints" name="learning_points" maxlength="1000" rows="5" placeholder="Plan a small web project&#10;Build a responsive interface&#10;Connect the app to an API" required></textarea>
+          <div class="website-trap" aria-hidden="true"><label for="website">Leave this field empty</label><input id="website" name="website" tabindex="-1" autocomplete="off" /></div>
+          <label class="signup-consent"><input type="checkbox" id="consent" required /><span>I agree that this information can be stored to review my workshop application. *</span></label>
+          <button class="button button-dark signup-submit" id="submitButton" type="submit">Create my workshop preview <span aria-hidden="true">↗</span></button>
+          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+    </div>
+  </main>
+  <footer class="site-footer"><div class="container signup-footer"><span>Workshop Builder</span><a href="/">Back to workshop page</a></div></footer>
+  <script src="/instructor-signup.js"></script>
+</body>
+</html>
